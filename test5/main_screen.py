@@ -60,8 +60,8 @@ class HomeScreenPlan:
                 elif code == self.commands[8]: clear()
                 elif code == self.commands[9]:
                     self.files.upload_to_file()
-                    for i in [".","..","...","....","....."]:
-                        print(Fore.LIGHTBLACK_EX + f"rebooting system{i}" + Style.RESET_ALL)
+                    for i in ["█","██","███","█████","█████"]:
+                        print(Fore.LIGHTBLACK_EX + f"rebooting system[{i}]" + Style.RESET_ALL)
                         time.sleep(len(i)/2)
                     print(Fore.LIGHTBLACK_EX + "reboot succussful!" + Style.RESET_ALL)
                     time.sleep(1)
