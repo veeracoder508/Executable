@@ -1,0 +1,82 @@
+def write_to_file(filename="my_file.txt", content="Hello, world!\nThis is a test file.\nPython is fun!"):
+    """
+    Writes the given content to a specified file.
+
+    Args:
+        filename (str): The name of the file to write to.
+        content (str): The text content to write into the file.
+    """
+    try:
+        # Open the file in 'write' mode ('w').
+        # If the file doesn't exist, it will be created.
+        # If the file exists, its content will be overwritten.
+        with open(filename, 'w') as file:
+            file.write(content)
+        print(f"Successfully wrote to '{filename}'")
+    except IOError:
+        print(f"Error: Could not write to file '{filename}'.")
+
+def read_from_file(filename="my_file.txt"):
+    """
+    Reads the content from a specified file and prints it.
+
+    Args:
+        filename (str): The name of the file to read from.
+    """
+    try:
+        # Open the file in 'read' mode ('r').
+        with open(filename, 'r') as file:
+            content = file.read() # Reads the entire content of the file
+            print(f"\nContent of '{filename}':")
+            print(content)
+    except FileNotFoundError:
+        print(f"Error: The file '{filename}' was not found.")
+    except IOError:
+        print(f"Error: Could not read from file '{filename}'.")
+
+def append_to_file(filename="my_file.txt", content_to_append="\nAppending new line."):
+    """
+    Appends the given content to the end of a specified file.
+
+    Args:
+        filename (str): The name of the file to append to.
+        content_to_append (str): The text content to append to the file.
+    """
+    try:
+        # Open the file in 'append' mode ('a').
+        # If the file doesn't exist, it will be created.
+        # Content will be added to the end of the file.
+        with open(filename, 'a') as file:
+            file.write(content_to_append)
+        print(f"Successfully appended to '{filename}'")
+    except IOError:
+        print(f"Error: Could not append to file '{filename}'.")
+
+# --- Main execution ---
+if __name__ == "__main__":
+    file_to_use = "sample_document.txt"
+    initial_content = "This is the first line written by the program.\nPython file operations are straightforward."
+
+    # 1. Write initial content to the file
+    write_to_file(file_to_use, initial_content)
+
+    # 2. Read the content from the file
+    read_from_file(file_to_use)
+
+    # 3. Append new content to the file
+    additional_content = "\nThis line was appended later."
+    append_to_file(file_to_use, additional_content)
+
+    # 4. Read the content again to see the appended text
+    read_from_file(file_to_use)
+
+    # Example of reading line by line
+    print(f"\nReading '{file_to_use}' line by line:")
+    try:
+        with open(file_to_use, 'r') as file:
+            for line_number, line in enumerate(file):
+                print(f"Line {line_number + 1}: {line.strip()}") # .strip() removes leading/trailing whitespace, including newline
+    except FileNotFoundError:
+        print(f"Error: The file '{file_to_use}' was not found for line-by-line reading.")
+    except IOError:
+        print(f"Error: Could not read from file '{file_to_use}' for line-by-line reading.")
