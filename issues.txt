@@ -7,8 +7,8 @@
     }
     [test5]
     {
-        [ ][1] to make the data not to be deleted after reboot in sopport.json
-        [ ][2] to retrieve data from support.json
+        [X][1] to make the data not to be deleted after reboot in sopport.json
+        [X][2] to retrieve data from support.json
     }
 }
 ========================================
