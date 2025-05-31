@@ -43,8 +43,45 @@ in the class `Filemanager()` there are
 __init__(self)
 add(self, split_code)
 delete(self, file_index = -1)
-display(self) # nat used
+display(self) # not used
 clear(self)
 disp(self)
 run(self, program_index)
 ```
+the `__init__()` gets nothing.
+
+the `add()` is used t store the data in `split_code` and store it in the database.
+
+the `delete()` is used to delete the last data in the database.
+
+the `disp()` is used to display the data in the database on the terminal.
+
+the `clear()` is used to clear all the data in the database.
+
+the `run()` is used to run a spicific program in the database.
+### decor.py
+```python
+clear()
+welcome_exe()
+welcome_main()
+error()
+main_error()
+```
+the `clear()` is used to clear the terminal.
+
+the `welcome_exe()` is used to display the welcome screen for the program screen.
+
+the `welcome_main()` is used to display the welcome screen for the main terminal.
+
+the `error()` is used to display an error screen and force stop the program if an unexpeted error occors.
+
+the `main_error()` is used to display that the command entered in the terminal is not a valid command.
+### code_screen.py
+```python
+__init__(self)
+ask()
+display()
+```
+the `ask()` is used to get the code from the code editor.
+
+the `display()` is used to display the output of the program. 
